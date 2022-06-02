@@ -1,0 +1,40 @@
+definitions:
+  web.Response:
+    properties:
+      Code:
+        type: integer
+      Data:
+        type: any
+      Error:
+        type: string
+    type: object
+info:
+  contact:
+    name: API Support
+    url: https://developers.mercadolibre.com.ar.support
+  description: This API handle MELI products
+  title: MELI Bootcampo API
+  version: "1.0"
+paths:
+  /user:
+    get:
+      consumes:
+      - application/json
+      description: Get Users list
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.Response'
+      summary: Get all Users
+      tags:
+      - Users
+swagger: "2.0"

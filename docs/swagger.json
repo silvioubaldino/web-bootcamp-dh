@@ -1,0 +1,62 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This API handle MELI products",
+        "title": "MELI Bootcampo API",
+        "contact": {
+            "name": "API Support",
+            "url": "https://developers.mercadolibre.com.ar.support"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/user": {
+            "get": {
+                "description": "Get Users list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get all Users",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "token",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.Response"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "web.Response": {
+            "type": "object",
+            "properties": {
+                "Code": {
+                    "type": "integer"
+                },
+                "Data": {
+                    "type": "any"
+                },
+                "Error": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
